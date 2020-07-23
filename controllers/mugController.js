@@ -2,9 +2,27 @@ const Mug = require('../models/mug');
 
 module.exports = {
 
+    /**
+     * middleware pour récupèrer et liste tous les mugs de la bdd
+     * 
+     * @async
+     * @param {Object} _ - Express request object
+     * @param {Object} response - Express response object
+     * @returns {json} tous les entrées de la table "mug"
+     */
+
     getAll: async (_, response) => {
         response.json({data: await Mug.findAll()});
     },
+
+    /**
+     * middleware pour insèrer un nouveau mug dans la bdd
+     * 
+     * @async
+     * @param {Object} request - Express request object
+     * @param {Object} response - Express response object
+     * @returns {json} tous les champs du nouveau mug
+     */
 
     create: async (request, response) => {
         const mug = new Mug();
@@ -14,6 +32,15 @@ module.exports = {
         response.json({data: mug});
     },
 
+    /**
+     * middleware pour utiliser un mug
+     * 
+     * @async
+     * @param {Object} request - Express request object
+     * @param {Object} response - Express response object
+     * @returns {json} tous les champs du mug utilisé
+     */
+
     use: async (request, response) => {
         const mug = new Mug();
         const currentId = request.params.id;
@@ -22,6 +49,15 @@ module.exports = {
 
         response.json({data: await Mug.findOne(currentId)});
     },
+
+    /**
+     * middleware pour nétoyer un mug
+     * 
+     * @async
+     * @param {Object} request - Express request object
+     * @param {Object} response - Express response object
+     * @returns {json} tous les champs du mug nétoyé plus un message si celui-ci est déja propre
+     */
 
     clean: async (request, response) => {
         const currentId = request.params.id;
