@@ -1,0 +1,25 @@
+{
+  "name": "oh-my-mug-guillaumemarenghi",
+  "version": "1.0.0",
+  "description": "Outil pour gérer une collection de mug.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev":"nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-Galactica/oh-my-mug-GuillaumeMarenghi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-Galactica/oh-my-mug-GuillaumeMarenghi/issues"
+  },
+  "homepage": "https://github.com/O-clock-Galactica/oh-my-mug-GuillaumeMarenghi#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pg": "^8.3.0"
+  }
+}
