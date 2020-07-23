@@ -1,6 +1,6 @@
 # data-o-my-mug
 
-Outil pour gérer une collection de mug.
+API pour gérer une collection de mug, dans laquelle la compléxité est basée sur le **sql** et donc sur **base de donné**.
 
 Thecnologies utilisées:
 - nodeJS v14

@@ -7,6 +7,12 @@ module.exports = class Mug {
         return result.rows;
     }
 
+    static async findOne(mugId) {
+        const result = await client.query('SELECT * FROM get_mugs() WHERE id = $1',[mugId]);
+        return result.rows;
+    }
+
+
     async save() {
         const result = await client.query('SELECT * FROM new_mug($1, $2, $3)',
         [
@@ -17,5 +23,21 @@ module.exports = class Mug {
         );
 
         this.id = result.rows[0].id;
+    }
+
+    async use() {
+        const result = await client.query('SELECT * FROM use_mug($1)',
+        [this.id]
+        );
+
+        return result.rows[0];
+    }
+
+    async clean() {
+        const result = await client.query('SELECT * FROM clean_mug($1)',
+        [this.id]
+        );
+
+        return result.rows[0];
     }
 }

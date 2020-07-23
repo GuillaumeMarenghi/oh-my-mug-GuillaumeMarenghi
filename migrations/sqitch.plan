@@ -6,3 +6,4 @@ mug-schema 2020-07-23T11:47:42Z "Etudiant O'clock",,, <etudiant@teleporteur> # s
 get-mug-function 2020-07-23T12:12:06Z "Etudiant O'clock",,, <etudiant@teleporteur> # fonction sql de récupération
 new_mug_function 2020-07-23T12:38:48Z "Etudiant O'clock",,, <etudiant@teleporteur> # enregistrement d'un nouveau mug
 use-mug 2020-07-23T12:52:18Z "Etudiant O'clock",,, <etudiant@teleporteur> # indique que l'on vient de se servir d'un mug
+clean_mug_function 2020-07-23T15:02:17Z "Etudiant O'clock",,, <etudiant@teleporteur> # ajout de la fonction pour nétoyer les mugs
