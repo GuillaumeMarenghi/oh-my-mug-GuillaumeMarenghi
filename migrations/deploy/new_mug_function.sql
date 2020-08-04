@@ -2,13 +2,11 @@
 
 BEGIN;
 
-CREATE FUNCTION new_mug(
-    lbl TEXT, cpt INT, dscr TEXT
-) RETURNS mug
+CREATE FUNCTION new_mug(mug_data json) RETURNS mug
 AS
 $$
     INSERT INTO mug ("label", "capacity", "description")
-    VALUES (lbl, cpt, dscr) RETURNING *;
+    VALUES (mug_data->>'label', (mug_data->>'capacity')::int, mug_data->>'description') RETURNING *;
 $$
 LANGUAGE sql VOLATILE;
 

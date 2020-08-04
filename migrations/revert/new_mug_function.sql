@@ -2,6 +2,6 @@
 
 BEGIN;
 
-DROP FUNCTION new_mug(TEXT, INT, TEXT);
+DROP FUNCTION new_mug(JSON);
 
 COMMIT;

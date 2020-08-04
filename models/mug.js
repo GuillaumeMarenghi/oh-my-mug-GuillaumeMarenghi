@@ -3,8 +3,14 @@ const client = require('./client');
 module.exports = class Mug {
 
     static async findAll(){
-        const result = await client.query('SELECT * FROM get_mugs()');
-        return result.rows;
+        try {
+            const result = await client.query('SELECT * FROM get_mugs()');
+            return result.rows;
+            
+        } catch (error) {
+            console.log('error:', error)
+            
+        }
     }
 
     static async findOne(mugId) {
@@ -14,17 +20,16 @@ module.exports = class Mug {
 
 
     async save() {
-        const result = await client.query('SELECT * FROM new_mug($1, $2, $3)',
+        const result = await client.query('SELECT * FROM new_mug($1)',
         [
-            this.label,
-            this.capacity,
-            this.description
+            this
         ]
         );
 
         this.id = result.rows[0].id;
     }
 
+    //voir pour la passer en static
     async use() {
         const result = await client.query('SELECT * FROM use_mug($1)',
         [this.id]

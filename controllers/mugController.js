@@ -25,11 +25,21 @@ module.exports = {
      */
 
     create: async (request, response) => {
-        const mug = new Mug();
-        Object.assign(mug, request.body);
-        await mug.save();
+        try {
+            
+            const mug = new Mug();
+            Object.assign(mug, request.body);
+            if (!mug.label || !mug.capacity) {
+                response.json({error: "les valeurs 'label' et 'capacity' ne peuvent pas être de type 'null'"})
+                return
+            };
+            await mug.save();
 
-        response.json({data: mug});
+    
+            response.json({data: mug});
+        } catch (error) {
+            console.log(error)
+        }
     },
 
     /**

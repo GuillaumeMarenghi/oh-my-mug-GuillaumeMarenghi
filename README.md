@@ -1,6 +1,6 @@
 # data-o-my-mug
 
-API pour gérer une collection de mug, dans laquelle la compléxité est basée sur le **sql** et donc sur **base de donné**.
+API pour gérer une collection de mug, dans laquelle la compléxité est basée sur le **sql** et donc dans la**base de données**.
 
 Thecnologies utilisées:
 - nodeJS v14
@@ -33,3 +33,8 @@ sqitch deploy
 npm run start
 ```
 
+4. Vous pouvez maintenant tester les routes 
+
+A l'aide d'un logiciel tel qu'`insomnia` ou `postman` ou encore via l'extension `REST client` de VSCode, vous pouvez tester les routes présente dans le fichier `./router/mugRouter`. La base de l'url sera votre localhost et le port que vous avez choisi pour lancer l'application (par default le 3000).  
+Exemple d'url pour utiliser le mug qui a l'id 1:
+`http://localhost:3000/use/1` avec la methode GET.
