@@ -32,9 +32,11 @@ sqitch status #pour vérifier que sqitch est bien connecté
 sqitch deploy
 npm run start
 ```
+Vous trouverez toutes les migrations `SQL` dans le dossier `./migrations/deploy`
 
 4. Vous pouvez maintenant tester les routes 
 
 A l'aide d'un logiciel tel qu'`insomnia` ou `postman` ou encore via l'extension `REST client` de VSCode, vous pouvez tester les routes présente dans le fichier `./router/mugRouter`. La base de l'url sera votre localhost et le port que vous avez choisi pour lancer l'application (par default le 3000).  
 Exemple d'url pour utiliser le mug qui a l'id 1:
-`http://localhost:3000/use/1` avec la methode GET.
+`http://localhost:3000/use/1` avec la methode GET.  
+Pour les requêtes effectuées via la methode POST l'API attend du format JSON pour le transfert des données.
